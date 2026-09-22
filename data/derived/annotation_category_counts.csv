@@ -1,0 +1,14 @@
+field,value,count,share
+label,True Positive,450,0.8241758241758241
+label,False Positive,96,0.17582417582417584
+human_confidence,High,294,0.5384615384615384
+human_confidence,Medium,252,0.46153846153846156
+difficulty,Hard,222,0.4065934065934066
+difficulty,Easy,172,0.315018315018315
+difficulty,Medium,152,0.2783882783882784
+event_label,turning_head_kick,293,0.5366300366300366
+event_label,non_turning_head_kick,157,0.2875457875457875
+event_label,uncertain,96,0.17582417582417584
+contact,clear_contact,300,0.5494505494505495
+contact,light_contact,150,0.27472527472527475
+contact,uncertain,96,0.17582417582417584
