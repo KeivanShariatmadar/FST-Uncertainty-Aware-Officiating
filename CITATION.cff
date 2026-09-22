@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this SSAC research package, please cite the associated paper and the underlying FST publications as appropriate."
+title: "Uncertainty-Aware AI-Assisted Video Review for Faster and More Reliable Officiating in Competitive Taekwondo"
+type: dataset
+authors:
+  - family-names: Shariatmadar
+    given-names: Keivan
+    affiliation: "htw saar – University of Applied Sciences"
+  - family-names: Osman
+    given-names: Ahmad
+    affiliation: "htw saar – University of Applied Sciences"
+  - family-names: Rey
+    given-names: Ramin
+    affiliation: "Austrian Taekwondo Federation (AUT)"
+repository-code: "https://github.com/KeivanShariatmadar/FST-Uncertainty-Aware-Officiating"
+abstract: "Public research documentation and reproducibility materials for an SSAC study of uncertainty-aware, human-in-the-loop AI-assisted video review in competitive Taekwondo."
+license: "NOASSERTION"
