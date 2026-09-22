@@ -16,7 +16,7 @@ Keivan Shariatmadar, Ahmad Osman, Ramin Ray, Usman Dildar, and Kisam Kim (2025).
 
 Public record: https://arxiv.org/abs/2510.18193
 
-The current arXiv metadata is reproduced here as the bibliographic source of record. In particular, it lists the third author's surname as **Ray**. The SSAC submission identifies **Ramin Rey** according to the author's current/preferred spelling supplied for that submission. This repository does not silently alter the authorship metadata of the prior publication.
+The current arXiv abstract metadata is used here as the bibliographic source of record and lists five authors: Keivan Shariatmadar, Ahmad Osman, Ramin Ray, Usman Dildar, and Kisam Kim. In particular, it lists the third author's surname as **Ray**. The SSAC submission identifies **Ramin Rey** according to the author's current/preferred spelling supplied for that submission. Some hosted manuscript copies expose a different author line, so the repository does not silently infer authorship from a PDF mirror. The arXiv metadata is retained as the citation-of-record here.
 
 FST.ai 2.0 extends the research with pose-based action recognition, epistemic-uncertainty modeling using credal sets, and explainability mechanisms. Its public abstract reports an 85% reduction in decision-review time and 93% referee trust in AI-assisted decisions. Those reported figures are treated as claims from the prior public record until the SSAC evidence audit links them to their evaluation population, denominator, protocol, and releasable supporting artifacts.
 
