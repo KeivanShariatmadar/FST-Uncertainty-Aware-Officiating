@@ -1,0 +1,16 @@
+metric,value,unit,interpretation
+raw_records,546,records,released raw de-identified candidate table
+canonical_records,545,records,canonical_record=true
+raw_unique_match_ids,74,match IDs,source identifiers; not necessarily unique bouts
+raw_unique_bout_clusters,73,bout clusters,uses linked cluster where source says two IDs are one bout
+raw_true_positive_labels,450,candidate labels,human candidate-validation label
+raw_false_positive_labels,96,candidate labels,human candidate-validation label
+canonical_true_positive_labels,449,candidate labels,after exact duplicate exclusion
+canonical_false_positive_labels,96,candidate labels,after exact duplicate exclusion
+canonical_candidate_confirmation_rate,0.8238532110091743,proportion,TP/(TP+FP) within selected candidate population; not recall/F1
+exact_duplicate_match_clip_keys,1,keys,match_id + clip_name with count > 1
+dominant_four_joint_patterns_records,535,records,top four label/confidence/difficulty/event/contact patterns
+dominant_four_joint_patterns_share,0.9798534798534798,proportion,top-four share of raw candidate table
+fp_rows_with_medium_hard_uncertain_uncertain_signature,96,records,descriptive structural regularity
+uncertain_event_label_rows,96,records,human/contextual event annotation
+uncertain_contact_rows,96,records,human/contextual contact annotation
