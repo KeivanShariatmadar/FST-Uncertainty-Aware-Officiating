@@ -17,6 +17,7 @@ Original evidence and source annotations are not destructively edited. Ground tr
 The released candidate annotation table cannot by itself establish recall or F1 because missed true events are not independently enumerated.
 
 ## End-to-end reproducible path
+0. Audit the existing archive split at bout level using `SPLIT_POLICY.md` and `validate_split.py`; freeze a split manifest.
 1. Freeze `ground_truth_events.csv`.
 2. Freeze `fst_ssac_predictions.csv`.
 3. Match the two layers using `match_events.py` with an explicitly declared temporal tolerance and class rule.
@@ -46,6 +47,10 @@ The 0.5 s value above is an **example invocation**, not a preregistered final to
 See `STATISTICAL_ANALYSIS_PLAN.md`. Principal confidence intervals use bout/match-level cluster resampling where appropriate. Thresholds for selective-prediction headline results must not be optimized on the final test set.
 
 ## Automated smoke test
+`audit_candidate_annotations.py` regenerates the released annotation audit from the de-identified candidate table.
+
+`inspect_fst_package.py` inventories the private FST source ZIP locally without emitting source-code snippets; see `LOCAL_IMPLEMENTATION_AUDIT.md`.
+
 `evaluation/tests/smoke_test.py` verifies basic exact-class and class-agnostic event matching plus metric accounting. A GitHub Actions workflow is included under `.github/workflows/reproducibility.yml`.
 
 If repository Actions are disabled at the account/repository level, the same smoke test can be run locally with Python 3.11+.
@@ -56,3 +61,7 @@ If repository Actions are disabled at the account/repository level, the same smo
 - Do not relabel human confidence as epistemic uncertainty.
 - Do not silently remove difficult or contradictory records.
 - Do not use an unreconciled public-paper number as a new SSAC empirical result.
+
+## Selective prediction
+
+See `SELECTIVE_PREDICTION_PROTOCOL.md` for the distinction between candidate-level risk–coverage and the preferred IVR decision-level defer-to-human analysis. Candidate-only uncertainty cannot account for undetected reference events unless the implementation produces a score on the corresponding eligible decision unit.
