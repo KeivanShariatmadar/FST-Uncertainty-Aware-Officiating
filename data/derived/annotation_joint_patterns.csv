@@ -1,0 +1,8 @@
+label,human_confidence,difficulty,event_label,contact,count,share
+True Positive,High,Easy,turning_head_kick,clear_contact,164,0.30036630036630035
+True Positive,Medium,Medium,non_turning_head_kick,light_contact,149,0.2728937728937729
+True Positive,High,Hard,turning_head_kick,clear_contact,126,0.23076923076923078
+False Positive,Medium,Hard,uncertain,uncertain,96,0.17582417582417584
+True Positive,Medium,Easy,non_turning_head_kick,clear_contact,7,0.01282051282051282
+True Positive,High,Medium,turning_head_kick,clear_contact,3,0.005494505494505495
+True Positive,High,Easy,non_turning_head_kick,light_contact,1,0.0018315018315018315
