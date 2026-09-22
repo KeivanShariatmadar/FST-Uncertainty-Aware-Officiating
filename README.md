@@ -1,6 +1,6 @@
 # FST: Uncertainty-Aware AI-Assisted Officiating in Competitive Taekwondo
 
-This repository accompanies the **SSAC27** research submission:
+Public research package for the **SSAC27** submission:
 
 **Uncertainty-Aware AI-Assisted Video Review for Faster and More Reliable Officiating in Competitive Taekwondo**
 
@@ -8,48 +8,108 @@ This repository accompanies the **SSAC27** research submission:
 ¹ htw saar – University of Applied Sciences, Saarbrücken, Germany  
 ² Austrian Taekwondo Federation (AUT), Austria
 
-## Purpose
-FST.ai investigates human-in-the-loop artificial intelligence for assisting video-review decisions in competitive Taekwondo. This SSAC research package is deliberately restricted to the FST.ai / FST.ai 2.0 officiating research line. APEX, Digital TA, WT-SCIP/SCIP, SILs and other projects are outside the scope of this submission.
+## Research question
 
-The central question is whether AI-assisted review can improve the speed, reliability, transparency and auditability of difficult officiating decisions while preserving final human authority.
+FST.ai studies human-in-the-loop AI for difficult video-review decisions in competitive Taekwondo. The SSAC study asks a narrower question than the broader FST ecosystem:
 
-## What is public here
-The repository now contains:
-- research and reproducibility documentation;
-- evaluation and claim-audit protocols;
-- metric definitions;
-- executable validation/evaluation scripts;
-- a de-identified candidate-level annotation release and canonical exact-deduplicated audit;
-- FST/FST 2.0 publication references;
-- SSAC submission material.
+> When visual evidence is incomplete or ambiguous, can an AI review system provide useful evidence while identifying the cases that should remain with the referee/jury?
 
-The candidate annotation release is **not** presented as a complete model-performance benchmark: it does not independently enumerate false negatives and its human confidence labels are not model epistemic uncertainty.
+This repository is restricted to the **FST.ai / FST.ai 2.0 officiating research line**. APEX, Digital TA, WT-SCIP/SCIP, SILs and other projects are out of scope.
+
+## Public evidence at a glance
+
+The current open candidate-annotation audit contains:
+
+| Quantity | Audited value |
+|---|---:|
+| Raw candidate records | 546 |
+| Recorded match IDs | 74 |
+| Exact duplicate match+clip keys | 1 |
+| Canonical candidate records | 545 |
+| TP-labelled canonical candidates | 449 |
+| FP-labelled canonical candidates | 96 |
+| Canonical candidate-confirmation rate | 82.39% |
+| Good visibility (raw) | 172 |
+| Moderate visibility (raw) | 152 |
+| Partial occlusion (raw) | 222 |
+| Rows in four dominant joint annotation patterns | 535/546 (97.99%) |
+
+**Interpretation boundary:** 82.39% is a descriptive candidate-confirmation fraction for the released selected candidate population. It is **not** reported as recall, F1, overall match accuracy, or a complete event-level FST performance estimate because the current candidate table does not independently enumerate false negatives.
+
+The audit also shows that all 96 FP-labelled raw candidates share the same Medium-confidence / Hard / uncertain-event / uncertain-contact / partial-occlusion annotation pattern. Human confidence/difficulty/visibility are therefore treated as contextual reference annotations, **not** as FST model epistemic uncertainty.
+
+## Reproduce the public audit
+
+~~~bash
+pip install -r evaluation/requirements.txt
+
+python evaluation/audit_candidate_annotations.py \
+  data/derived/annotation_candidate_records_deidentified.csv \
+  --out candidate_audit_results
+~~~
+
+For the final independent event-level benchmark:
+
+~~~bash
+python evaluation/match_events.py \
+  data/derived/ground_truth_events.csv \
+  data/derived/fst_ssac_predictions.csv \
+  --tolerance-s <declared_tolerance> \
+  --class-mode exact \
+  --output data/derived/matched_events.csv
+
+python evaluation/validate_derived_data.py data/derived
+python evaluation/evaluate_predictions.py data/derived/matched_events.csv --out results
+~~~
+
+The ground-truth and frozen-prediction files are intentionally not fabricated as placeholders. They will be released only when generated from verified source evidence.
 
 ## Human-in-the-loop principle
-FST.ai is decision support. AI outputs are evidence and recommendations for authorized human officials; they are not autonomous competition decisions. Ambiguous or insufficient-evidence cases remain subject to human adjudication.
+
+FST.ai is decision support. AI outputs are evidence/recommendations for authorized human officials; they are not autonomous competition decisions. Ambiguous or insufficient-evidence cases remain subject to human adjudication.
+
+The planned FST 2.0 uncertainty analysis therefore focuses on **selective prediction / decision-to-defer** rather than forcing a binary answer in every case.
 
 ## Evidence discipline
-No quantitative result is promoted to the SSAC manuscript unless its evaluation unit, sample size, denominator, source, reference procedure and calculation are traceable. Public preprint claims that are not yet independently reconstructed are explicitly quarantined in the published-claims audit rather than silently repeated as new evidence.
 
-## Open research and implementation boundary
-Public availability of this repository does not by itself publish production FST source code, trained production weights, credentials, confidential deployment configuration or protected implementation know-how. The SSAC competition states that model code is encouraged but not required; the data used for the research and reproducible evaluation evidence are the priority of this package.
+Every quantitative claim is classified in `evaluation/evidence_ledger.csv`.
 
-Third-party competition footage is not redistributed unless the authors have the legal authority and appropriate permissions to do so.
+- Verified public candidate-audit results are linked to released data.
+- Prior-public FST/FST 2.0 headline numbers that have not yet been independently reconstructed are quarantined in `evaluation/PUBLISHED_CLAIMS_AUDIT.md`.
+- Human annotation confidence is never relabelled as model uncertainty.
+- Recall/F1 are not reported until false negatives are independently observable.
+- Bout/match clustering is used to avoid treating correlated clips as IID observations.
 
 ## Repository map
-- `DATA_STATEMENT.md` — provenance, availability and restrictions
-- `REPRODUCIBILITY.md` — reproducibility scope
-- `IP_AND_LICENSING.md` — IP/licensing boundary
-- `CITATION.cff` — citation metadata
-- `paper/` — SSAC abstract/submission material and readiness notes
-- `data/derived/` — de-identified audited annotations and target derived-evidence schemas
-- `evaluation/` — metrics, evidence audit, claim audit and executable evaluation scripts
-- `references/` — FST.ai and FST.ai 2.0 publication record
 
-## Current evidence status
-The first annotation audit contains 546 raw candidate-level records and 545 canonical records after removal of one exact duplicate match/clip key. The final manuscript-ready benchmark still requires an independent ground-truth event inventory and frozen FST/FST 2.0 prediction export so that TP, FP and FN are derived through deterministic event matching.
+- `DATA_STATEMENT.md` — data provenance, release status and rights constraints
+- `REPRODUCIBILITY.md` — what can currently be reproduced
+- `IP_AND_LICENSING.md` — research/publication versus private FST implementation boundary
+- `data/derived/` — de-identified annotation data, audit log, summaries and target schemas
+- `evaluation/` — evidence audit, split policy, event matcher, metrics, statistical plan and uncertainty protocol
+- `paper/` — SSAC27 abstract, claim map, readiness and open-source compliance review
+- `references/` — FST.ai / FST.ai 2.0 publication record
 
-See `evaluation/ANNOTATION_AUDIT.md`, `evaluation/PUBLISHED_CLAIMS_AUDIT.md`, and `paper/SSAC27_SUBMISSION_READINESS.md`.
+## Open research and implementation boundary
+
+SSAC requires the data used for the submitted research to be available through an open repository; model code is encouraged but not mandatory. This repository therefore prioritizes auditable data and evaluation logic.
+
+Production FST source code, trained production weights, credentials and confidential deployment configuration are not automatically released. Third-party championship footage is not redistributed unless the necessary rights/privacy basis is verified.
+
+See `paper/SSAC27_OPEN_SOURCE_COMPLIANCE.md` for the current compliance analysis.
+
+## Current submission status
+
+The evidence-safe abstract contains **376 words**, uses the required Introduction/Methods/Results/Conclusion structure, and is mapped claim-by-claim to public evidence.
+
+The stronger manuscript-ready FST efficacy benchmark still requires:
+1. an independent event census that observes false negatives;
+2. a frozen FST/FST 2.0 prediction export;
+3. actual model-generated numerical uncertainty;
+4. reconciliation of latency and human-study source observations.
+
+See `paper/SSAC27_SUBMISSION_READINESS.md`.
 
 ## Contact
+
 Scientific correspondence: Keivan Shariatmadar, htw saar – University of Applied Sciences.
