@@ -49,3 +49,6 @@ The preferred empirical hierarchy is:
 5. human acceptance/trust as a separate user-study outcome.
 
 If the frozen event-level experiment is not complete by the abstract deadline, the abstract must be limited to quantities whose evidence has already passed the claim gate.
+
+## Owner-level item not changed automatically
+The repository currently has no blanket reuse license (`CITATION.cff` states `NOASSERTION`). Because granting a license changes legal reuse rights, no new data/software license has been imposed automatically. Before final submission, the authors should reconcile the desired non-commercial research-use boundary with Sloan's open-source requirement.
