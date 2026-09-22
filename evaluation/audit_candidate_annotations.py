@@ -85,6 +85,27 @@ def main() -> None:
 
     tp_c = int(canonical_labels.get("True Positive", 0))
     fp_c = int(canonical_labels.get("False Positive", 0))
+    # Delete-one-bout cluster jackknife for the descriptive candidate-confirmation ratio.
+    # This accounts for within-bout dependence without pretending that the
+    # candidate sample is a complete event census.
+    total_n = len(canonical)
+    total_tp = tp_c
+    clusters = []
+    for cluster_id, g in canonical.groupby("bout_cluster_id", dropna=False):
+        g_tp = int(g["label"].eq("True Positive").sum())
+        clusters.append((cluster_id, len(g), g_tp))
+    loo = [
+        (total_tp - g_tp) / (total_n - g_n)
+        for _, g_n, g_tp in clusters
+        if total_n > g_n
+    ]
+    g_count = len(loo)
+    jack_mean = sum(loo) / g_count
+    jack_var = ((g_count - 1) / g_count) * sum((x - jack_mean) ** 2 for x in loo)
+    jack_se = jack_var ** 0.5
+    confirmation = total_tp / total_n
+    jack_lo = max(0.0, confirmation - 1.96 * jack_se)
+    jack_hi = min(1.0, confirmation + 1.96 * jack_se)
 
     summary = [
         ("raw_records", len(df), "records", "released raw de-identified candidate table"),
@@ -95,7 +116,11 @@ def main() -> None:
         ("raw_false_positive_labels", int(raw_labels.get("False Positive", 0)), "candidate labels", "human candidate-validation label"),
         ("canonical_true_positive_labels", tp_c, "candidate labels", "after exact duplicate exclusion"),
         ("canonical_false_positive_labels", fp_c, "candidate labels", "after exact duplicate exclusion"),
-        ("canonical_candidate_confirmation_rate", tp_c / (tp_c + fp_c), "proportion", "TP/(TP+FP) within selected candidate population; not recall/F1"),
+        ("canonical_candidate_confirmation_rate", confirmation, "proportion", "TP/(TP+FP) within selected candidate population; not recall/F1"),
+        ("canonical_candidate_confirmation_cluster_count", g_count, "bout clusters", "delete-one-cluster jackknife uses bout_cluster_id"),
+        ("canonical_candidate_confirmation_cluster_jackknife_se", jack_se, "proportion", "delete-one-bout jackknife standard error"),
+        ("canonical_candidate_confirmation_cluster_jackknife_95_low", jack_lo, "proportion", "normal 95% interval using cluster-jackknife SE"),
+        ("canonical_candidate_confirmation_cluster_jackknife_95_high", jack_hi, "proportion", "normal 95% interval using cluster-jackknife SE"),
         ("exact_duplicate_match_clip_keys", len(duplicate_keys), "keys", "match_id + clip_name with count > 1"),
         ("dominant_four_joint_patterns_records", dominant_four, "records", "top four label/confidence/difficulty/event/contact patterns"),
         ("dominant_four_joint_patterns_share", dominant_four / len(df), "proportion", "top-four share of raw candidate table"),
