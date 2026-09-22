@@ -12,3 +12,6 @@ event_label,uncertain,96,0.17582417582417584
 contact,clear_contact,300,0.5494505494505495
 contact,light_contact,150,0.27472527472527475
 contact,uncertain,96,0.17582417582417584
+visibility,partial_occlusion,222,0.4065934065934066
+visibility,good,172,0.315018315018315
+visibility,moderate,152,0.2783882783882784
