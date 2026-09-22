@@ -6,7 +6,7 @@ This document records the audit of the championship-derived FST candidate-annota
 
 The source table contains **546 candidate-level records across 74 recorded match IDs**. The raw labels contain **450 True Positive** and **96 False Positive** candidate validations. One exact repeated match/clip key was found; retaining one canonical occurrence yields **545 auditable candidate records (449 TP, 96 FP)**.
 
-The corresponding canonical candidate-confirmation fraction is **82.39% (449/545)**. This quantity must **not** be described as recall, F1, overall match-level accuracy, or an unbiased estimate of full-system performance. The table contains system-detected/selected candidate clips and does not independently enumerate missed true events (FN).
+The corresponding canonical candidate-confirmation fraction is **82.39% (449/545)**. Treating the 73 canonical bout clusters as the dependence units, a delete-one-bout cluster jackknife gives SE = **0.00624** and an approximate normal 95% interval of **81.16%–83.61%**. This quantity must **not** be described as recall, F1, overall match-level accuracy, or an unbiased estimate of full-system performance. The table contains system-detected/selected candidate clips and does not independently enumerate missed true events (FN).
 
 ## Provenance classification
 
@@ -81,7 +81,7 @@ The de-identified candidate table supports:
 
 - transparent accounting of the annotated candidate population;
 - descriptive TP/FP candidate-validation counts under the source selection process;
-- the 82.39% canonical candidate-confirmation rate, with its denominator explicitly stated;
+- the 82.39% canonical candidate-confirmation rate, with its denominator explicitly stated, plus the bout-cluster jackknife uncertainty interval;
 - descriptive stratification by action type, contact, difficulty and verified visibility;
 - annotation-quality/provenance auditing;
 - sensitivity analysis to exact duplicate removal.
