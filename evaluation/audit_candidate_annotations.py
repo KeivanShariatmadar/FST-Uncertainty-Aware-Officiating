@@ -13,12 +13,12 @@ import pandas as pd
 
 REQUIRED = [
     "record_id", "match_id", "bout_cluster_id", "clip_name", "label",
-    "human_confidence", "difficulty", "event_label", "contact",
+    "human_confidence", "difficulty", "event_label", "contact", "visibility",
     "duplicate_key", "canonical_record", "bookkeeping_flag",
     "analysis_inclusion", "provenance_role",
 ]
 
-DOMINANT_FIELDS = ["label", "human_confidence", "difficulty", "event_label", "contact"]
+DOMINANT_FIELDS = ["label", "human_confidence", "difficulty", "event_label", "contact", "visibility"]
 
 
 def as_bool(s: pd.Series) -> pd.Series:
@@ -80,6 +80,7 @@ def main() -> None:
         & df["difficulty"].eq("Hard")
         & df["event_label"].eq("uncertain")
         & df["contact"].eq("uncertain")
+        & df["visibility"].eq("partial_occlusion")
     )
 
     tp_c = int(canonical_labels.get("True Positive", 0))
@@ -98,7 +99,11 @@ def main() -> None:
         ("exact_duplicate_match_clip_keys", len(duplicate_keys), "keys", "match_id + clip_name with count > 1"),
         ("dominant_four_joint_patterns_records", dominant_four, "records", "top four label/confidence/difficulty/event/contact patterns"),
         ("dominant_four_joint_patterns_share", dominant_four / len(df), "proportion", "top-four share of raw candidate table"),
-        ("fp_rows_with_medium_hard_uncertain_uncertain_signature", int(fp_signature.sum()), "records", "descriptive structural regularity"),
+        ("fp_rows_with_medium_hard_uncertain_uncertain_partial_occlusion_signature", int(fp_signature.sum()), "records", "descriptive structural regularity"),
+        ("good_visibility_rows", int(df["visibility"].eq("good").sum()), "records", "human/contextual visibility annotation"),
+        ("moderate_visibility_rows", int(df["visibility"].eq("moderate").sum()), "records", "human/contextual visibility annotation"),
+        ("partial_occlusion_rows", int(df["visibility"].eq("partial_occlusion").sum()), "records", "human/contextual visibility annotation"),
+        ("false_positive_partial_occlusion_rows", int((fp_mask & df["visibility"].eq("partial_occlusion")).sum()), "records", "descriptive structural regularity"),
         ("uncertain_event_label_rows", int(df["event_label"].eq("uncertain").sum()), "records", "human/contextual event annotation"),
         ("uncertain_contact_rows", int(df["contact"].eq("uncertain").sum()), "records", "human/contextual contact annotation"),
     ]
@@ -106,7 +111,7 @@ def main() -> None:
 
     category_tables = [
         value_counts_table(df, f)
-        for f in ["label", "human_confidence", "difficulty", "event_label", "contact"]
+        for f in ["label", "human_confidence", "difficulty", "event_label", "contact", "visibility"]
     ]
     category_df = pd.concat(category_tables, ignore_index=True)
 
