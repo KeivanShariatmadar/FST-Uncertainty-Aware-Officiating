@@ -1,9 +1,17 @@
 # Data Directory
 
-No raw competition video is released at Stage 1.
+No raw competition video is released unless redistribution rights, privacy basis, and relevant permissions are verified.
 
-This directory is reserved for **verified and legally releasable** research artifacts produced by the evidence audit. See the repository-level `DATA_STATEMENT.md`.
+## Public derived evidence
+The `derived/` directory now contains a de-identified candidate-annotation release and a canonical exact-deduplicated audit version, together with schemas and integrity documentation.
 
-The `derived/` directory must contain only artifacts whose provenance, privacy status, third-party rights, and relationship to reported results have been checked.
+These files were produced from the championship-derived annotation source while removing athlete names. They are intended to support transparent evidence auditing. They are **not** presented as a complete event-level model benchmark because false negatives are not independently enumerated and human confidence is not model uncertainty.
 
-Do not add production data, raw third-party footage, credentials, private logs, or proprietary model assets.
+See:
+- `../DATA_STATEMENT.md`
+- `derived/README.md`
+- `derived/INTEGRITY.md`
+- `../evaluation/ANNOTATION_AUDIT.md`
+
+## Do not add
+Do not add raw third-party competition footage, credentials, confidential deployment logs, production model weights, or proprietary implementation assets without an explicit rights and release decision.
