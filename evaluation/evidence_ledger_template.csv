@@ -1,0 +1,2 @@
+claim_id,claim_or_result,evidence_role,evaluation_unit,source_artifact,population_n,denominator,inclusion_exclusion,ground_truth_protocol,model_version,point_estimate,uncertainty_interval,aggregation,cluster_unit,status,release_status,notes
+FST-001,,,,,,,,,,,,,,Pending,Internal,
