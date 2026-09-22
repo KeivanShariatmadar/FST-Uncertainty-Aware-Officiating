@@ -1,24 +1,27 @@
 # SSAC27 Abstract Claim Map
 
-This file maps the evidence-safe abstract draft to the current repository evidence.
+This file maps the current evidence-safe abstract draft to public/reproducible evidence.
 
 | Abstract statement | Evidence status | Supporting artifact |
 |---|---|---|
-| 546 annotated candidate clips | Verified from parsed annotation source | `data/derived/annotation_candidate_records_deidentified.csv`; `evaluation/ANNOTATION_AUDIT.md` |
-| 74 recorded match identifiers | Verified from parsed annotation source | annotation audit |
-| one exact duplicate match/clip record | Verified | annotation audit and duplicate flag in released CSV |
-| documented two-ID same-bout case | Verified source bookkeeping note | audit flags / `bout_cluster_id` |
-| 545 canonical candidate records | Verified after exact deduplication | `annotation_candidate_records_audited.csv` |
-| 449 human-validated true candidates; 96 false candidates | Verified from current source annotation table | audited CSV |
-| 82.39% candidate-confirmation rate | Reproducible arithmetic: 449/545 | audited CSV; **not** labelled recall/F1/overall accuracy |
-| 535/546 (97.99%) in four dominant joint patterns | Verified annotation-structure audit | `evaluation/ANNOTATION_AUDIT.md` |
-| all 96 FP-labelled rows share Medium/Hard/uncertain/uncertain pattern | Verified | annotation audit |
-| human annotation confidence is not model uncertainty | Methodological/provenance rule | evidence-audit protocol |
-| current table cannot establish recall/F1 | Verified limitation: FN not independently enumerated | evidence-audit protocol / metric definitions |
-| risk–coverage / defer-to-human evaluation | Registered evaluation method, **not yet an empirical result** | `evaluation/evaluate_predictions.py` |
+| 546 annotated candidate clips | Verified | `data/derived/annotation_candidate_records_deidentified.csv` |
+| 74 recorded match identifiers | Verified | annotation audit / public candidate table |
+| True/False Positive semantics describe system-detected candidates | Verified from supplied annotation manual | `evaluation/ANNOTATION_AUDIT.md` |
+| human confidence, difficulty, action, contact and row-aligned visibility available | Verified | public candidate table / `annotation_category_counts.csv` |
+| one exact duplicate match+clip occurrence | Verified | `audit_log.csv` / duplicate flags |
+| one documented two-ID same-bout case | Verified | `audit_log.csv` / `bout_cluster_id` |
+| 545 canonical records | Verified | `annotation_candidate_records_audited.csv` |
+| 449 TP-labelled and 96 FP-labelled canonical candidates | Verified | audited CSV |
+| 82.39% candidate-confirmation rate | Reproducible: 449/545 | audited CSV; deliberately not labelled recall/F1/overall accuracy |
+| 535/546 (97.99%) in four dominant joint patterns | Verified | `annotation_joint_patterns.csv` |
+| all 96 FP-labelled candidates are Medium/Hard/uncertain/uncertain/partial-occlusion | Verified | public candidate table / annotation audit |
+| 222 partial-occlusion rows = 126 TP-labelled + 96 FP-labelled | Verified | public candidate table / annotation audit |
+| human confidence/visibility are not model epistemic uncertainty | Provenance/methodological rule | `EVIDENCE_AUDIT_PROTOCOL.md` |
+| current candidate table cannot establish recall/F1 | Verified limitation: FN not independently enumerated | evidence protocol / metric definitions |
+| decision-to-defer / risk-coverage is the planned FST uncertainty evaluation | Registered method, **not yet an empirical result** | `STATISTICAL_ANALYSIS_PLAN.md`; `evaluate_predictions.py` |
 
 ## Excluded headline claims
-The draft intentionally excludes the public FST.ai 2.0 headline figures (e.g. review-time reduction and referee trust) until their underlying populations and calculations are reconciled. See `evaluation/PUBLISHED_CLAIMS_AUDIT.md`.
+The draft intentionally excludes unreconciled prior-public FST.ai 2.0 headline figures such as the 85% review-time reduction and 93% referee trust until their underlying populations/calculations are reconciled. See `evaluation/PUBLISHED_CLAIMS_AUDIT.md` and `evaluation/evidence_ledger.csv`.
 
 ## Word count
-The draft contains **375 words including title and section headings as stored here**. Before upload, recount in the final exported file because formatting/tokenization may differ slightly across software.
+The current draft contains **376 words including title and section headings as stored in Markdown**, below the SSAC27 limit of fewer than 500 words. Recount after the final PDF/DOC export because software tokenization and visible formatting can differ.
