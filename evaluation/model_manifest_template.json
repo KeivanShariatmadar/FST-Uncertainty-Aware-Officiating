@@ -1,0 +1,20 @@
+{
+  "_template_notice": "Template only; populate from the frozen FST implementation before evaluation.",
+  "fst_package_version": "",
+  "source_package_fingerprint_sha256": "",
+  "model_identifier": "",
+  "weights_fingerprint_sha256": "",
+  "inference_config_id": "",
+  "inference_config_fingerprint_sha256": "",
+  "python_version": "",
+  "framework_versions": {},
+  "hardware": "",
+  "operating_system": "",
+  "evaluation_split_id": "",
+  "inference_date_utc": "",
+  "random_seeds": [],
+  "model_confidence_definition": "",
+  "model_uncertainty_definition": "",
+  "uncertainty_orientation": "",
+  "notes": ""
+}
