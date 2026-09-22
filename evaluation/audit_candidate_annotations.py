@@ -124,6 +124,29 @@ def main() -> None:
     summary_df.to_csv(args.out / "annotation_audit_summary.csv", index=False)
     category_df.to_csv(args.out / "annotation_category_counts.csv", index=False)
     patterns.to_csv(args.out / "annotation_joint_patterns.csv", index=False)
+    strata = []
+    for field in ["visibility", "difficulty", "human_confidence", "event_label", "contact"]:
+        for value, g in canonical.groupby(field, dropna=False):
+            labels = g["label"].value_counts()
+            tp = int(labels.get("True Positive", 0))
+            fp = int(labels.get("False Positive", 0))
+            denom = tp + fp
+            strata.append({
+                "field": field,
+                "value": value,
+                "n": len(g),
+                "tp_labelled": tp,
+                "fp_labelled": fp,
+                "candidate_confirmation_rate": (tp / denom) if denom else float("nan"),
+                "interpretation": (
+                    "human confidence, not model uncertainty"
+                    if field == "human_confidence"
+                    else "descriptive only; annotation fields are structurally coupled"
+                ),
+            })
+    pd.DataFrame(strata).to_csv(
+        args.out / "annotation_stratified_confirmation.csv", index=False
+    )
     dup_df.to_csv(args.out / "annotation_duplicate_keys.csv", index=False)
     flagged_df.to_csv(args.out / "annotation_flagged_records.csv", index=False)
 
