@@ -8,6 +8,10 @@ raw_false_positive_labels,96,candidate labels,human candidate-validation label
 canonical_true_positive_labels,449,candidate labels,after exact duplicate exclusion
 canonical_false_positive_labels,96,candidate labels,after exact duplicate exclusion
 canonical_candidate_confirmation_rate,0.8238532110091743,proportion,TP/(TP+FP) within selected candidate population; not recall/F1
+canonical_candidate_confirmation_cluster_count,73,bout clusters,delete-one-cluster jackknife uses bout_cluster_id
+canonical_candidate_confirmation_cluster_jackknife_se,0.006237109231754901,proportion,delete-one-bout jackknife standard error
+canonical_candidate_confirmation_cluster_jackknife_95_low,0.8116284769149347,proportion,normal 95% interval using cluster-jackknife SE
+canonical_candidate_confirmation_cluster_jackknife_95_high,0.8360779451034139,proportion,normal 95% interval using cluster-jackknife SE
 exact_duplicate_match_clip_keys,1,keys,match_id + clip_name with count > 1
 dominant_four_joint_patterns_records,535,records,top four label/confidence/difficulty/event/contact/visibility patterns
 dominant_four_joint_patterns_share,0.9798534798534798,proportion,top-four share of raw candidate table
