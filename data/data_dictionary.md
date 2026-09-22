@@ -19,6 +19,7 @@ Files:
 | `difficulty` | Human/contextual difficulty annotation |
 | `event_label` | Human/contextual event label (turning head kick, non-turning head kick, uncertain) |
 | `contact` | Human/contextual contact annotation |
+| `visibility` | Human/contextual visibility annotation (`good`, `moderate`, `partial_occlusion`) |
 | `duplicate_key` | Whether the match+clip key occurs more than once in the raw source |
 | `canonical_record` | Whether this row is the retained canonical occurrence of the match+clip key |
 | `bookkeeping_flag` | Source identity/bookkeeping issue identified by the audit |
