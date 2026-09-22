@@ -2,49 +2,57 @@
 
 The SSAC evaluation treats FST.ai as human-in-the-loop decision support rather than autonomous officiating.
 
-The principal evaluation dimensions are:
-
-1. **Decision performance** — performance against a declared expert/reference standard.
-2. **Review latency** — time required to reach or support a review decision under a defined baseline and assisted workflow.
-3. **Human agreement and interaction** — agreement with expert decisions and, where separately measured, referee/user assessment of AI-supported decisions.
-4. **Uncertainty-aware behavior** — whether ambiguous or insufficient-evidence cases can be identified and deferred rather than forced into unsupported binary decisions.
-5. **Interpretability/auditability** — whether the evidence presented to officials can be inspected and associated with the recommendation.
-
-Any full-paper table will state the evaluation population, denominator, baseline, and aggregation method next to the reported metric.
+## Evaluation dimensions
+1. **Decision performance** — performance against an independent expert/reference standard.
+2. **Review latency** — time to reach/support a review decision under comparable baseline and assisted workflows.
+3. **Human agreement and interaction** — agreement plus separately defined referee/user-study outcomes.
+4. **Uncertainty-aware behavior** — whether insufficient-evidence cases can be identified and deferred.
+5. **Interpretability/auditability** — whether evidence and recommendations remain traceable.
 
 ## Evidence discipline
+See `EVIDENCE_AUDIT_PROTOCOL.md`, `ANNOTATION_AUDIT.md`, and `PUBLISHED_CLAIMS_AUDIT.md`.
 
-See `EVIDENCE_AUDIT_PROTOCOL.md`. Original championship evidence and source annotations are not destructively edited. Ground truth, frozen FST/FST 2.0 outputs, independent contextual annotations, and derived variables are kept conceptually separate. Human annotation confidence must not be represented as FST epistemic uncertainty.
+Original evidence and source annotations are not destructively edited. Ground truth, frozen FST/FST 2.0 outputs, independent contextual annotations, and derived variables are kept separate. Human annotation confidence must not be represented as FST epistemic uncertainty.
 
-The current working annotations contain data-quality/provenance issues that must be resolved in the audit layer before headline metrics are calculated. Recall and F1 are not reported unless false negatives are observable from an independently enumerated reference-event population.
+The released candidate annotation table cannot by itself establish recall or F1 because missed true events are not independently enumerated.
 
-## Derived tables
-
-The canonical schemas are documented in `../data/derived/SCHEMA.md`:
-
-- `ground_truth_events.csv`
-- `fst_ssac_predictions.csv`
-- `matched_events.csv`
-- `audit_log.csv`
-
-The operational FST source code and production weights are not required in the public repository. Frozen model outputs used for reported research results should be released where rights and confidentiality permit.
-
-## Reproducible scripts
-
-`validate_derived_data.py` performs fail-fast structural checks before analysis.
-
-`evaluate_predictions.py` consumes the audited `matched_events.csv` and produces:
-
-- overall TP/FP/FN counts, precision, recall and F1 where supported;
-- bout/match-cluster bootstrap confidence intervals;
-- stratified tables for available action type, visibility, contact quality, difficulty and reference ambiguity fields; and
-- risk–coverage output when a genuine numerical model uncertainty or confidence field is available.
+## End-to-end reproducible path
+1. Freeze `ground_truth_events.csv`.
+2. Freeze `fst_ssac_predictions.csv`.
+3. Match the two layers using `match_events.py` with an explicitly declared temporal tolerance and class rule.
+4. Validate derived files with `validate_derived_data.py`.
+5. Compute performance, cluster-bootstrap intervals, contextual strata, and risk–coverage output with `evaluate_predictions.py`.
+6. Record every manuscript headline result in the evidence ledger.
 
 Example:
 
 ```bash
+pip install -r evaluation/requirements.txt
+
+python evaluation/match_events.py \
+  data/derived/ground_truth_events.csv \
+  data/derived/fst_ssac_predictions.csv \
+  --tolerance-s 0.5 \
+  --class-mode exact \
+  --output data/derived/matched_events.csv
+
 python evaluation/validate_derived_data.py data/derived
 python evaluation/evaluate_predictions.py data/derived/matched_events.csv --out results
 ```
 
-No script should infer ground truth from model predictions or manufacture missing FN observations. Thresholds used for headline selective-prediction results must not be selected on the final test population.
+The 0.5 s value above is an **example invocation**, not a preregistered final tolerance. The manuscript must state the selected tolerance and sensitivity analyses.
+
+## Statistical analysis
+See `STATISTICAL_ANALYSIS_PLAN.md`. Principal confidence intervals use bout/match-level cluster resampling where appropriate. Thresholds for selective-prediction headline results must not be optimized on the final test set.
+
+## Automated smoke test
+`evaluation/tests/smoke_test.py` verifies basic exact-class and class-agnostic event matching plus metric accounting. A GitHub Actions workflow is included under `.github/workflows/reproducibility.yml`.
+
+If repository Actions are disabled at the account/repository level, the same smoke test can be run locally with Python 3.11+.
+
+## Prohibited shortcuts
+- Do not infer ground truth from FST predictions.
+- Do not manufacture FN observations.
+- Do not relabel human confidence as epistemic uncertainty.
+- Do not silently remove difficult or contradictory records.
+- Do not use an unreconciled public-paper number as a new SSAC empirical result.
