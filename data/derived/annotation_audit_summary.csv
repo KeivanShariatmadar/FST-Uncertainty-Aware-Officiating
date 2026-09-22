@@ -9,8 +9,12 @@ canonical_true_positive_labels,449,candidate labels,after exact duplicate exclus
 canonical_false_positive_labels,96,candidate labels,after exact duplicate exclusion
 canonical_candidate_confirmation_rate,0.8238532110091743,proportion,TP/(TP+FP) within selected candidate population; not recall/F1
 exact_duplicate_match_clip_keys,1,keys,match_id + clip_name with count > 1
-dominant_four_joint_patterns_records,535,records,top four label/confidence/difficulty/event/contact patterns
+dominant_four_joint_patterns_records,535,records,top four label/confidence/difficulty/event/contact/visibility patterns
 dominant_four_joint_patterns_share,0.9798534798534798,proportion,top-four share of raw candidate table
-fp_rows_with_medium_hard_uncertain_uncertain_signature,96,records,descriptive structural regularity
+fp_rows_with_medium_hard_uncertain_uncertain_partial_occlusion_signature,96,records,descriptive structural regularity
 uncertain_event_label_rows,96,records,human/contextual event annotation
 uncertain_contact_rows,96,records,human/contextual contact annotation
+good_visibility_rows,172,records,human/contextual visibility annotation
+moderate_visibility_rows,152,records,human/contextual visibility annotation
+partial_occlusion_rows,222,records,human/contextual visibility annotation
+false_positive_partial_occlusion_rows,96,records,all FP-labelled raw candidates are partial_occlusion
