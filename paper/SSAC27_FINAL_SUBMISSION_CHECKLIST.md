@@ -7,14 +7,14 @@
 - Open repository: https://github.com/KeivanShariatmadar/FST-Uncertainty-Aware-Officiating
 
 ## Recommended submission title
-**When Should AI Defer? Uncertainty-Aware Video Review for Human-in-the-Loop Officiating in Competitive Taekwondo**
+**When Should AI Defer? An Evidence Audit of AI-Assisted Video Review in Competitive Taekwondo**
 
 ## Recommended abstract
 Use exactly:
-- 'SSAC27_ABSTRACT_FINAL_CANDIDATE.md', or
+- 'SSAC27_ABSTRACT_FINAL.md', or
 - 'SSAC27_SUBMISSION_COPY_PASTE.txt' for direct form entry.
 
-The abstract is below the 500-word limit and uses the required Introduction / Methods / Results / Conclusion structure.
+The authoritative abstract contains 362 whitespace-delimited words including title/headings, is below the 500-word limit, and uses the required Introduction / Methods / Results / Conclusion structure.
 
 ## Evidence status
 ### Ready for abstract-stage use
@@ -67,8 +67,8 @@ These remain prior-public or incomplete-evidence claims until the raw observatio
 - retain a PDF/screenshot of the final submitted abstract and confirmation page.
 
 ## Full-paper upgrade if invited
-The current full paper is already rewritten at:
-'SSAC27_FULL_PAPER_CURRENT_EVIDENCE.md'.
+The authoritative full paper is:
+'SSAC27_FULL_PAPER_MASTER.md'.
 
 Before the December full-paper deadline, the strongest upgrade is:
 1. independently enumerate all eligible reference events;
