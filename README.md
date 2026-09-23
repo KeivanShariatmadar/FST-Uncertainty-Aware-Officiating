@@ -2,7 +2,7 @@
 
 Public research package for the **SSAC27** submission:
 
-**Uncertainty-Aware AI-Assisted Video Review for Faster and More Reliable Officiating in Competitive Taekwondo**
+**When Should AI Defer? Uncertainty-Aware Video Review for Human-in-the-Loop Officiating in Competitive Taekwondo**
 
 **Authors:** Keivan Shariatmadar¹ · Ahmad Osman¹ · Ramin Rey²  
 ¹ htw saar – University of Applied Sciences, Saarbrücken, Germany  
@@ -100,7 +100,7 @@ See `paper/SSAC27_OPEN_SOURCE_COMPLIANCE.md` for the current compliance analysis
 
 ## Current submission status
 
-The evidence-safe abstract contains **376 words**, uses the required Introduction/Methods/Results/Conclusion structure, and is mapped claim-by-claim to public evidence.
+The current final abstract candidate contains **393 words including title and section headings**, uses the required Introduction/Methods/Results/Conclusion structure, and is mapped claim-by-claim to public evidence. A fully rewritten 5,000+ word current-evidence manuscript is also provided in `paper/SSAC27_FULL_PAPER_CURRENT_EVIDENCE.md`.
 
 The stronger manuscript-ready FST efficacy benchmark still requires:
 1. an independent event census that observes false negatives;
