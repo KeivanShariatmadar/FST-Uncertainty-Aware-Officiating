@@ -2,9 +2,9 @@
 
 ## Current authoritative draft
 
-The current recommended SSAC27 abstract is:
+The authoritative SSAC27 abstract is:
 
-**'SSAC27_ABSTRACT_FINAL_CANDIDATE.md'**
+**'SSAC27_ABSTRACT_FINAL.md'**
 
 It contains **393 whitespace-delimited words including the title and section headings**, remains below the SSAC27 limit of fewer than 500 words, uses the required Introduction / Methods / Results / Conclusion structure, and is mapped to released evidence in 'ABSTRACT_CLAIM_MAP.md'.
 
@@ -20,7 +20,7 @@ For direct form entry, use:
 
 ## Claim discipline
 
-The current final candidate intentionally excludes unreconciled prior-public FST.ai 2.0 headline figures such as:
+The final abstract intentionally excludes unreconciled prior-public FST.ai 2.0 headline figures such as:
 - 85% decision-review-time reduction;
 - 93% referee trust;
 - approximately 92.7–92.8% accuracy descriptions.
