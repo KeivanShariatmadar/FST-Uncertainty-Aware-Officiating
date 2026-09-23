@@ -1,0 +1,46 @@
+name: export-ssac27-documents
+
+on:
+  push:
+    paths:
+      - 'paper/SSAC27_ABSTRACT_FINAL.md'
+      - 'paper/SSAC27_FULL_PAPER_MASTER.md'
+      - '.github/workflows/export-ssac27-documents.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc zip
+
+      - name: Build Word and LaTeX versions
+        run: |
+          mkdir -p export
+          pandoc paper/SSAC27_ABSTRACT_FINAL.md             --from=markdown+tex_math_dollars             --to=docx             --output=export/SSAC27_Abstract_Final.docx
+
+          pandoc paper/SSAC27_ABSTRACT_FINAL.md             --from=markdown+tex_math_dollars             --to=latex             --standalone             --output=export/SSAC27_Abstract_Final.tex
+
+          pandoc paper/SSAC27_FULL_PAPER_MASTER.md             --from=markdown+tex_math_dollars             --to=docx             --output=export/SSAC27_Full_Paper_Final.docx
+
+          pandoc paper/SSAC27_FULL_PAPER_MASTER.md             --from=markdown+tex_math_dollars             --to=latex             --standalone             --output=export/SSAC27_Full_Paper_Final.tex
+
+          cp paper/SSAC27_ABSTRACT_FINAL.md export/
+          cp paper/SSAC27_FULL_PAPER_MASTER.md export/
+          (cd export && zip -9 SSAC27_Final_Submission_Package.zip             SSAC27_Abstract_Final.docx             SSAC27_Abstract_Final.tex             SSAC27_Full_Paper_Final.docx             SSAC27_Full_Paper_Final.tex             SSAC27_ABSTRACT_FINAL.md             SSAC27_FULL_PAPER_MASTER.md)
+
+      - name: Upload export package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ssac27-final-documents
+          path: export/
+          if-no-files-found: error
+          retention-days: 30
