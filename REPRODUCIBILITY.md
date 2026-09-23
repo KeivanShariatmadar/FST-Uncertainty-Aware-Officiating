@@ -17,7 +17,7 @@ The repository now provides:
 8. structural validation and model-performance evaluation scripts;
 9. a frozen-model export specification and model-manifest template;
 10. a populated claim/evidence ledger separating verified results from unreconciled prior-public claims;
-11. an evidence-safe abstract draft and claim map.
+11. a final evidence-grounded abstract candidate, claim map, copy/paste submission text, and rewritten current-evidence manuscript.
 
 ## Current reproducible result
 From the released candidate annotation data, an independent user can reproduce:
