@@ -33,7 +33,7 @@ The FST.ai 2.0 arXiv citation-of-record uses the spelling **Ramin Ray**; the SSA
 ## Authoritative abstract
 
 Use:
-- 'paper/SSAC27_ABSTRACT_FINAL_CANDIDATE.md'
+- 'paper/SSAC27_ABSTRACT_FINAL.md'
 
 For direct form entry:
 - 'paper/SSAC27_SUBMISSION_COPY_PASTE.txt'
@@ -46,7 +46,7 @@ Do not use the historical PDF as the current abstract:
 ## Authoritative current full paper
 
 Use:
-- 'paper/SSAC27_FULL_PAPER_CURRENT_EVIDENCE.md'
+- 'paper/SSAC27_FULL_PAPER_MASTER.md'
 
 This manuscript is intentionally written around evidence that is currently auditable. It should be upgraded rather than replaced if the frozen-model benchmark becomes available.
 
