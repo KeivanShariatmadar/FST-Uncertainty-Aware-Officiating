@@ -2,16 +2,31 @@
 
 ## Current authoritative draft
 
-The current evidence-audited SSAC27 abstract text is:
+The current recommended SSAC27 abstract is:
 
-**`SSAC27_ABSTRACT_EVIDENCE_SAFE_DRAFT.md`**
+**'SSAC27_ABSTRACT_FINAL_CANDIDATE.md'**
 
-It contains 376 words including title/section headings and is mapped to released evidence in `ABSTRACT_CLAIM_MAP.md`.
+It contains **393 whitespace-delimited words including the title and section headings**, remains below the SSAC27 limit of fewer than 500 words, uses the required Introduction / Methods / Results / Conclusion structure, and is mapped to released evidence in 'ABSTRACT_CLAIM_MAP.md'.
 
-## Earlier PDF
+For direct form entry, use:
 
-`SSAC27_FST_Competition_Abstract_Final.pdf` predates the current evidence audit. It is preserved for provenance and should **not** be treated as the authoritative post-audit abstract merely because its historical filename contains `Final`.
+**'SSAC27_SUBMISSION_COPY_PASTE.txt'**
 
-Before actual form submission, the uploadable PDF/DOC should be regenerated from the evidence-safe draft (or from a later stronger draft only after the added claims pass the evidence ledger).
+## Earlier files
 
-No prior-public FST.ai 2.0 headline number should be reintroduced into the submitted Results section unless it has been reconciled against its source population and calculation.
+'SSAC27_ABSTRACT_EVIDENCE_SAFE_DRAFT.md' is retained as the earlier conservative post-audit draft.
+
+'SSAC27_FST_Competition_Abstract_Final.pdf' predates the completed evidence audit and the current title. It is preserved for provenance and should **not** be treated as the authoritative submission merely because its historical filename contains 'Final'.
+
+## Claim discipline
+
+The current final candidate intentionally excludes unreconciled prior-public FST.ai 2.0 headline figures such as:
+- 85% decision-review-time reduction;
+- 93% referee trust;
+- approximately 92.7–92.8% accuracy descriptions.
+
+Those figures can return to a later manuscript only after the evidence ledger links them to their exact population, denominator, protocol, calculation and releasable source observations.
+
+The authoritative current full-paper text is:
+
+**'SSAC27_FULL_PAPER_CURRENT_EVIDENCE.md'**
