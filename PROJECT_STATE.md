@@ -28,7 +28,7 @@ The FST.ai 2.0 arXiv citation-of-record uses the spelling **Ramin Ray**; the SSA
 
 ## Authoritative SSAC27 title
 
-**When Should AI Defer? Uncertainty-Aware Video Review for Human-in-the-Loop Officiating in Competitive Taekwondo**
+**When Should AI Defer? An Evidence Audit of AI-Assisted Video Review in Competitive Taekwondo**
 
 ## Authoritative abstract
 
@@ -38,7 +38,7 @@ Use:
 For direct form entry:
 - 'paper/SSAC27_SUBMISSION_COPY_PASTE.txt'
 
-The current candidate contains 393 whitespace-delimited words including title and section headings.
+The authoritative abstract contains 362 whitespace-delimited words including title and section headings.
 
 Do not use the historical PDF as the current abstract:
 - 'paper/SSAC27_FST_Competition_Abstract_Final.pdf'
@@ -48,7 +48,10 @@ Do not use the historical PDF as the current abstract:
 Use:
 - 'paper/SSAC27_FULL_PAPER_MASTER.md'
 
-This manuscript is intentionally written around evidence that is currently auditable. It should be upgraded rather than replaced if the frozen-model benchmark becomes available.
+This is the scientifically polished current-evidence manuscript. It is written around evidence that is currently auditable and should be upgraded, rather than replaced, if the frozen-model benchmark becomes available.
+
+Scientific review memo:
+- 'paper/FINAL_SCIENTIFIC_REVIEW.md'
 
 ## Verified current-study evidence
 
