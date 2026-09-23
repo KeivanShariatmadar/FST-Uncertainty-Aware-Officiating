@@ -70,7 +70,7 @@ The study makes four concrete contributions that correspond directly to the eval
 
 Technology-assisted officiating spans electronic scoring, line and goal systems, video-assistant systems, and increasingly computer-vision-based decision support. Recent reviews argue that AI in refereeing should be treated as a socio-technical system rather than as an isolated prediction problem, because adoption depends on transparency, workflow fit, responsibility, and human acceptance in addition to technical accuracy [9].
 
-AI-powered video assistant systems in football and other team sports have been studied as mechanisms for reducing decision time and increasing consistency, although complex edge cases remain difficult [10]. Combat sports create additional challenges: high-speed articulated motion, frequent self- and mutual occlusion, rapid camera-relative pose changes, and scoring rules that depend on both action type and valid contact.
+AI-powered video assistant systems in football and other team sports have been studied as mechanisms for reducing decision time and increasing consistency, although complex edge cases remain difficult [10]. Combat sports create additional challenges: high-speed articulated motion, frequent self- and mutual occlusion, rapid camera-relative pose changes, and scoring rules that depend on both action type and valid contact. Existing combat-sport vision research shows that the perception problem is technically tractable but also illustrates the gap between action recognition and officiating. Lee and Jung's TUHAD benchmark contains 1,936 Taekwondo poomsae samples across eight unit techniques, ten experts, and two camera views, with a key-frame CNN reaching up to 95.833% recognition accuracy under the reported configurations [12]. Quinn and Corcoran combined real-time object detection, tracking, and pose estimation for combat-sport video analysis and discussed competitive scoring as a potential application [13]. Ait-Bennacer et al. used multi-view Karate data with OpenPose/FastPose and LSTM/ST-GCN recognition, reporting strong action-recognition performance in a controlled smart-coaching setting [14]. These studies establish useful perception foundations, but none removes the need to evaluate uncertainty, evidence quality, and human deferral under live adjudication conditions. The ST-GCN architecture itself provides a general mechanism for learning spatial and temporal patterns from skeleton graphs and is a relevant foundation for pose-based FST 2.0 action recognition [15].
 
 ### 2.2 AI-assisted Taekwondo video review
 
@@ -568,3 +568,11 @@ For sports organizations, the practical question is therefore not “Can AI make
 [10] M. Zhekambayeva, M. Yerekesheva, N. Ramashov, Y. Seidakhmetov, and B. Kulambayev. “Designing an artificial intelligence-powered video assistant referee system for team sports using computer vision.” *Retos*, 61, 2024. https://doi.org/10.47197/retos.v61.110300
 
 [11] MIT Sloan Sports Analytics Conference. “Research Paper Competition — SSAC27 Rules.” Accessed September 2026. https://www.sloansportsconference.com/research-paper-competition
+
+[12] J. Lee and H. Jung. “TUHAD: Taekwondo Unit Technique Human Action Dataset with Key Frame-Based CNN Action Recognition.” *Sensors*, 20(17):4871, 2020. https://doi.org/10.3390/s20174871
+
+[13] E. Quinn and N. Corcoran. “Automation of Computer Vision Applications for Real-time Combat Sports Video Analysis.” *European Conference on the Impact of Artificial Intelligence and Robotics*, 4(1), 2022. https://doi.org/10.34190/eciair.4.1.930
+
+[14] F.-E. Ait-Bennacer, A. Aaroud, K. Akodadi, and B. Cherradi. “Applying Deep Learning and Computer Vision Techniques for an e-Sport and Smart Coaching System Using a Multiview Dataset: Case of Shotokan Karate.” *International Journal of Online Engineering*, 18(12), 2022. https://doi.org/10.3991/ijoe.v18i12.30893
+
+[15] S. Yan, Y. Xiong, and D. Lin. “Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action Recognition.” *Proceedings of the AAAI Conference on Artificial Intelligence*, 32(1), 2018.
