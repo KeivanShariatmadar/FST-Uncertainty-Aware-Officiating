@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this SSAC research package, please cite the associated paper and the underlying FST publications as appropriate."
-title: "Uncertainty-Aware AI-Assisted Video Review for Faster and More Reliable Officiating in Competitive Taekwondo"
+title: "When Should AI Defer? Uncertainty-Aware Video Review for Human-in-the-Loop Officiating in Competitive Taekwondo"
 type: dataset
 authors:
   - family-names: Shariatmadar
