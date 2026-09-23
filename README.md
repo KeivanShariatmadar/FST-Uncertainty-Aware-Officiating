@@ -103,7 +103,7 @@ See `paper/SSAC27_OPEN_SOURCE_COMPLIANCE.md` for the current compliance analysis
 
 **Automated reproducibility check:** the public GitHub Actions `reproducibility-smoke-test` has completed successfully on the evaluation package (including script compilation and the evaluation smoke test).
 
-The current final abstract candidate contains **393 words including title and section headings**, uses the required Introduction/Methods/Results/Conclusion structure, and is mapped claim-by-claim to public evidence. A fully rewritten 5,000+ word current-evidence manuscript is also provided in `paper/SSAC27_FULL_PAPER_CURRENT_EVIDENCE.md`.
+The authoritative final abstract in `paper/SSAC27_ABSTRACT_FINAL.md` contains **393 words including title and section headings**, uses the required Introduction/Methods/Results/Conclusion structure, and is mapped claim-by-claim to public evidence. A fully rewritten 5,000+ word current-evidence manuscript is also provided in `paper/SSAC27_FULL_PAPER_MASTER.md`.
 
 The stronger manuscript-ready FST efficacy benchmark still requires:
 1. an independent event census that observes false negatives;
