@@ -41,8 +41,8 @@ SIGNALS = {
     "threshold": r"\bthreshold",
     "abstain_or_defer": r"\b(abstain|defer|reject option|human review)\b",
     "head_kick": r"head[ _-]?kick",
-    "turning": r"\bturning\\b|spin(n?ing)?",
-    "pose": r"\bpose\\b|keypoint|skeleton",
+    "turning": r"\bturning\b|spin(n?ing)?",
+    "pose": r"\bpose\b|keypoint|skeleton",
     "openpose": r"openpose",
     "mediapipe": r"mediapipe",
     "yolo": r"\byolo",
@@ -50,9 +50,9 @@ SIGNALS = {
     "tensorflow": r"\b(tensorflow|keras)\b",
     "onnx": r"\bonnx",
     "opencv": r"\b(cv2|opencv)\b",
-    "fps_or_frame": r"\bfps\\b|frame[_ -]?rate|frame[_ -]?index",
-    "latency_or_timing": r"\blatency\\b|perf_counter|time\.time|elapsed",
-    "event_logic": r"\bevent\\b|temporal|window|cooldown|debounce",
+    "fps_or_frame": r"\bfps\b|frame[_ -]?rate|frame[_ -]?index",
+    "latency_or_timing": r"\blatency\b|perf_counter|time\.time|elapsed",
+    "event_logic": r"\bevent\b|temporal|window|cooldown|debounce",
     "logging_or_export": r"\b(csv|json|logger|logging|export|audit)\b",
 }
 COMPILED = {k: re.compile(v, re.I) for k, v in SIGNALS.items()}
