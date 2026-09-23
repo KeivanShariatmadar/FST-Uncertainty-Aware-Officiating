@@ -27,3 +27,7 @@ jobs:
         run: python -m py_compile evaluation/*.py
       - name: Run evaluation smoke test
         run: python evaluation/tests/smoke_test.py
+      - name: Reproduce public annotation audit
+        run: python evaluation/tests/public_audit_repro_test.py
+      - name: Run public reproducibility entry point
+        run: python evaluation/run_reproducibility.py --out /tmp/fst-repro
