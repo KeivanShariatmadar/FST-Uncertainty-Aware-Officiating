@@ -1,6 +1,6 @@
-# SSAC27 Final Abstract Claim Map
+# SSAC27 Final Polished Abstract Claim Map
 
-This file maps the current recommended abstract in 'SSAC27_ABSTRACT_FINAL_CANDIDATE.md' to public/reproducible evidence.
+This file maps the authoritative abstract in 'SSAC27_ABSTRACT_FINAL.md' to public/reproducible evidence.
 
 | Abstract statement | Evidence status | Supporting artifact |
 |---|---|---|
@@ -28,4 +28,4 @@ The final abstract intentionally excludes unreconciled prior-public FST.ai 2.0 f
 
 ## Word count
 
-'SSAC27_ABSTRACT_FINAL_CANDIDATE.md' contains **393 whitespace-delimited words including the title and section headings**, below the SSAC27 limit of fewer than 500 words. The final online form should be recounted after copy/paste because platform tokenization may differ.
+'SSAC27_ABSTRACT_FINAL.md' contains **362 whitespace-delimited words including the title and section headings**, below the SSAC27 limit of fewer than 500 words. The final online form should be recounted after copy/paste because platform tokenization may differ.
