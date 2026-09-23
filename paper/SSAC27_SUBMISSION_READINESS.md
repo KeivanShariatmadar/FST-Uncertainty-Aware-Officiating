@@ -36,9 +36,10 @@ The submitted abstract should:
 - candidate-vs-decision-level selective-prediction protocol;
 - frozen-model export specification and model-manifest template;
 - private-package implementation-audit checklist and privacy-preserving ZIP inventory utility;
-- evidence-safe SSAC27 abstract draft with **376 words**;
+- final SSAC27 abstract candidate with **393 words including title and section headings**;
 - claim-to-evidence map for the abstract;
-- open-source compliance review.
+- open-source compliance review;
+- fully rewritten current-evidence manuscript with literature positioning, audited methods/results, limitations and reproducibility section.
 
 ### Current verified abstract-stage results
 The public evidence currently supports:
@@ -84,7 +85,7 @@ The strongest final FST abstract/paper should prioritize:
 4. operational review latency;
 5. human acceptance/trust as a separate user-study outcome.
 
-Until those stronger evidence layers are complete, `SSAC27_ABSTRACT_EVIDENCE_SAFE_DRAFT.md` is the defensible abstract text.
+The current recommended abstract is `SSAC27_ABSTRACT_FINAL_CANDIDATE.md`. It uses only verified current-study results and does not promote unreconciled prior-public headline figures. The rewritten current-evidence manuscript is `SSAC27_FULL_PAPER_CURRENT_EVIDENCE.md`.
 
 ## Owner-level licensing item
 The repository currently has no blanket reuse license (`CITATION.cff` states `NOASSERTION`). Granting a license changes legal reuse rights, so no new data/software license has been imposed automatically.
