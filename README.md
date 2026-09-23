@@ -2,7 +2,7 @@
 
 Public research package for the **SSAC27** submission:
 
-**When Should AI Defer? Uncertainty-Aware Video Review for Human-in-the-Loop Officiating in Competitive Taekwondo**
+**When Should AI Defer? An Evidence Audit of AI-Assisted Video Review in Competitive Taekwondo**
 
 **Authors:** Keivan Shariatmadar¹ · Ahmad Osman¹ · Ramin Rey²  
 ¹ htw saar – University of Applied Sciences, Saarbrücken, Germany  
@@ -39,6 +39,13 @@ The current open candidate-annotation audit contains:
 The audit also shows that all 96 FP-labelled raw candidates share the same Medium-confidence / Hard / uncertain-event / uncertain-contact / partial-occlusion annotation pattern. Human confidence/difficulty/visibility are therefore treated as contextual reference annotations, **not** as FST model epistemic uncertainty.
 
 ## Reproduce the public audit
+
+One-command reproduction:
+
+~~~bash
+python evaluation/run_reproducibility.py
+~~~
+
 
 ~~~bash
 pip install -r evaluation/requirements.txt
@@ -103,7 +110,7 @@ See `paper/SSAC27_OPEN_SOURCE_COMPLIANCE.md` for the current compliance analysis
 
 **Automated reproducibility check:** the public GitHub Actions `reproducibility-smoke-test` has completed successfully on the evaluation package (including script compilation and the evaluation smoke test).
 
-The authoritative final abstract in `paper/SSAC27_ABSTRACT_FINAL.md` contains **393 words including title and section headings**, uses the required Introduction/Methods/Results/Conclusion structure, and is mapped claim-by-claim to public evidence. A fully rewritten 5,000+ word current-evidence manuscript is also provided in `paper/SSAC27_FULL_PAPER_MASTER.md`.
+The authoritative final abstract in `paper/SSAC27_ABSTRACT_FINAL.md` contains **362 words including title and section headings**, uses the required Introduction/Methods/Results/Conclusion structure, and is mapped claim-by-claim to public evidence. The scientifically polished master manuscript is provided in `paper/SSAC27_FULL_PAPER_MASTER.md` and is supported by `paper/FINAL_SCIENTIFIC_REVIEW.md`.
 
 The stronger manuscript-ready FST efficacy benchmark still requires:
 1. an independent event census that observes false negatives;
