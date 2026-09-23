@@ -61,6 +61,6 @@ If an underlying observation cannot legally be released, this repository will no
 ## Automated checks
 A GitHub Actions workflow, `reproducibility-smoke-test`, now runs on changes to the evaluation package. It installs the declared Python dependencies, compiles the evaluation scripts, and executes `evaluation/tests/smoke_test.py`.
 
-CI execution has been observed and verified as successful on the public repository. In particular, workflow run 21 completed successfully for commit `4679fcb1c092dfd7c75bc0aca7eddb6cd48346a4` after correction of the package-audit utility. This establishes that the public evaluation code is not only documented but passes the repository's current automated smoke-test gate.
+CI execution has been observed and verified as successful on the public repository. The expanded smoke-test suite also passed in workflow run 22 for commit `af0fe66d9bf306ea10a65e3e417975de11f011af`, including deterministic event matching, TP/FP/FN metric checks, selective risk-coverage ordering, clustered bootstrap execution, and failure on an invalid temporal tolerance.
 
 The CI check is intentionally a structural/reproducibility test; it does not substitute for the still-pending empirical frozen-model benchmark, independent ground-truth event census, or raw-video rights review.
