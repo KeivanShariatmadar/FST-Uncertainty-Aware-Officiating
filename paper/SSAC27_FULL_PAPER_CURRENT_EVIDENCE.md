@@ -538,7 +538,7 @@ For sports organizations, the practical question is therefore not “Can AI make
 
 [8] Y. Zhang, R. Qu, and O. Girard. “Faster, more accurate? A feasibility study on replacing human judges with artificial intelligence in video review for the Paris Olympics Taekwondo competition.” *Frontiers in Sports and Active Living*, 7:1632326, 2025. https://doi.org/10.3389/fspor.2025.1632326
 
-[9] “Possibilities of Artificial Intelligence in Sports Refereeing: An Exploratory Study Contrasting the Literature Review with Expert-Perceived Opportunities.” *Multimodal Technologies and Interaction*, 10(3):30, 2026. https://doi.org/10.3390/mti10030030
+[9] D. Martín Moncunill, D. Sampedro Lirio, and M. Á. Bravo Hijón. “Possibilities of Artificial Intelligence in Sports Refereeing: An Exploratory Study Contrasting the Literature Review with Expert-Perceived Opportunities.” *Multimodal Technologies and Interaction*, 10(3):30, 2026. https://doi.org/10.3390/mti10030030
 
 [10] M. Zhekambayeva, M. Yerekesheva, N. Ramashov, Y. Seidakhmetov, and B. Kulambayev. “Designing an artificial intelligence-powered video assistant referee system for team sports using computer vision.” *Retos*, 61, 2024. https://doi.org/10.47197/retos.v61.110300
 
