@@ -16,6 +16,16 @@ Original evidence and source annotations are not destructively edited. Ground tr
 
 The released candidate annotation table cannot by itself establish recall or F1 because missed true events are not independently enumerated.
 
+## One-command public reproduction
+
+The released audit can now be reproduced with:
+
+```bash
+python evaluation/run_reproducibility.py
+```
+
+The runner always regenerates the public candidate-annotation audit. It runs the stronger event-level benchmark only when independently frozen `ground_truth_events.csv` and `fst_ssac_predictions.csv` are present; it never fabricates missing benchmark files.
+
 ## End-to-end reproducible path
 0. Audit the existing archive split at bout level using `SPLIT_POLICY.md` and `validate_split.py`; freeze a split manifest.
 1. Freeze `ground_truth_events.csv`.
@@ -51,7 +61,7 @@ See `STATISTICAL_ANALYSIS_PLAN.md`. Principal confidence intervals use bout/matc
 
 `inspect_fst_package.py` inventories the private FST source ZIP locally without emitting source-code snippets; see `LOCAL_IMPLEMENTATION_AUDIT.md`.
 
-`evaluation/tests/smoke_test.py` verifies basic exact-class and class-agnostic event matching plus metric accounting. A GitHub Actions workflow is included under `.github/workflows/reproducibility.yml`.
+`evaluation/tests/smoke_test.py` verifies exact-class and class-agnostic event matching, metric arithmetic, clustered bootstrap behavior, risk–coverage behavior, and invalid-tolerance handling. `evaluation/tests/public_audit_repro_test.py` regenerates the public audit and verifies the checked-in evidence tables. GitHub Actions runs both tests plus the one-command reproduction entry point.
 
 If repository Actions are disabled at the account/repository level, the same smoke test can be run locally with Python 3.11+.
 
