@@ -50,6 +50,18 @@ The research questions are:
 
 The main contribution is consequently not a single headline accuracy value. It is an auditable transition from a candidate-level evidence table to an evaluation architecture in which claims, denominators, dependence, uncertainty, and human deferral are explicitly defined.
 
+### 1.1 Contributions
+
+The study makes four concrete contributions that correspond directly to the evaluation demands of applied sports analytics.
+
+**Evidence audit.** We reconstruct and release a de-identified candidate-level evidence layer, preserve the raw observations, identify exact duplication and match-identity conflicts, and create a canonical analysis population without silently rewriting the source record.
+
+**Validity analysis.** We show quantitatively that the human confidence, difficulty, action ambiguity, contact ambiguity, visibility, and TP/FP fields are strongly coupled. This prevents an attractive but invalid interpretation of human annotation confidence as calibrated FST epistemic uncertainty.
+
+**Decision-to-defer evaluation design.** We define an event-level benchmark that requires independently frozen ground truth and model outputs, bout-aware uncertainty intervals, deterministic event matching, and selective-prediction evaluation through coverage and retained risk. The design makes false negatives and human deferral observable rather than optimizing only the correctness of surfaced candidates.
+
+**Reproducible research package.** We provide the de-identified evidence used for the present results, an evidence ledger, audit logs, analysis code, event-matching code, validation tools, a statistical analysis plan, a frozen-model export specification, and automated repository checks. This makes the present claims reproducible while keeping proprietary implementation assets and third-party footage outside the public package unless separately cleared.
+
 ---
 
 ## 2. Related Work
@@ -69,6 +81,17 @@ The public FST.ai 2.0 record reports headline figures including an 85% reduction
 The closest independent Taekwondo comparison is the 2025 feasibility study of Paris 2024 Olympic video review [8]. That study analyzed 241 cases, found κ = 0.897 agreement between AI-generated judgments and international video-review referees, and reported that the nine discrepant cases were concentrated in minimal-contact and occluded scenarios. This is relevant to FST because it suggests that the operationally hard cases may be a small but structurally distinct subset.
 
 ### 2.3 Selective prediction, abstention, and human deferral
+
+The present study differs from the existing FST and Taekwondo video-review literature in the object being evaluated:
+
+| Work | Primary object | Main reported evidence | Uncertainty / deferral role | Limitation relative to this study |
+|---|---|---|---|---|
+| FST.ai [2] | AI-assisted officiating architecture | system design and operational examples | implicit reliability support | not an independent event-level uncertainty benchmark |
+| FST.ai 2.0 [3] | explainable, uncertainty-aware FST ecosystem | prior-public latency/trust/accuracy descriptions | credal-set uncertainty proposed | headline observations require source-level reconciliation for SSAC reuse |
+| Zhang et al. [8] | AI vs. IVR referees on Paris 2024 cases | 241 reviews, κ agreement, discrepancy and timing analysis | difficult cases discussed; human oversight retained | different model/task and no FST epistemic risk-coverage analysis |
+| **Present study** | evidence validity and human-defer benchmark for FST | 546-candidate audit, provenance, cluster-aware descriptive inference | explicit separation of human confidence from model uncertainty; registered risk-coverage benchmark | frozen model/event-census stage still required for full FST efficacy estimates |
+
+The comparison is intentionally descriptive rather than a ranking. The novelty of the present work lies in making the evidence boundary and decision-to-defer evaluation explicit and reproducible.
 
 Selective classification formalizes the choice to abstain on uncertain inputs. El-Yaniv and Wiener define the risk-coverage trade-off: decreasing coverage can reduce predictive risk when the model can rank cases by reliability [4]. In an officiating context, this has a direct operational interpretation. A model need not make an autonomous call on every event; instead, it can support the official on well-supported cases and defer ambiguous cases for human review.
 
