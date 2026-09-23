@@ -59,4 +59,8 @@ Reproduction of released evaluation calculations does not by itself require publ
 If an underlying observation cannot legally be released, this repository will not substitute synthetic observations and present them as original evidence. Any simulated data used solely for software tests are explicitly labelled and are not evidentiary support for empirical claims.
 
 ## Automated checks
-A GitHub Actions smoke-test workflow is included. At the time this statement was updated, no workflow run had yet been observed through the connected GitHub interface; therefore this repository does not claim CI-verified execution until a run is recorded. The test can also be executed in a standard Python environment using the declared dependencies.
+A GitHub Actions workflow, `reproducibility-smoke-test`, now runs on changes to the evaluation package. It installs the declared Python dependencies, compiles the evaluation scripts, and executes `evaluation/tests/smoke_test.py`.
+
+CI execution has been observed and verified as successful on the public repository. In particular, workflow run 21 completed successfully for commit `4679fcb1c092dfd7c75bc0aca7eddb6cd48346a4` after correction of the package-audit utility. This establishes that the public evaluation code is not only documented but passes the repository's current automated smoke-test gate.
+
+The CI check is intentionally a structural/reproducibility test; it does not substitute for the still-pending empirical frozen-model benchmark, independent ground-truth event census, or raw-video rights review.
