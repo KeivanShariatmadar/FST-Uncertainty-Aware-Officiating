@@ -27,33 +27,33 @@ DEPENDENCY_NAMES = {
     "pipfile.lock", "environment.yml", "environment.yaml", "setup.py",
     "setup.cfg", "dockerfile", "docker-compose.yml", "docker-compose.yaml",
 }
-SENSITIVE_NAME_RE = re.compile(r"(^|/)(\\.env($|\\.)|.*(secret|token|credential|private[_-]?key).*)", re.I)
+SENSITIVE_NAME_RE = re.compile(r"(^|/)(\.env($|\.)|.*(secret|token|credential|private[_-]?key).*)", re.I)
 
 SIGNALS = {
-    "uncertainty": r"\\buncertaint",
-    "credal": r"\\bcredal",
+    "uncertainty": r"\buncertaint",
+    "credal": r"\bcredal",
     "random_set": r"random[ _-]?set",
-    "interval": r"\\binterval",
-    "ensemble": r"\\bensemble",
-    "dropout": r"\\bdropout",
-    "softmax": r"\\bsoftmax",
-    "confidence": r"\\bconfiden",
-    "threshold": r"\\bthreshold",
-    "abstain_or_defer": r"\\b(abstain|defer|reject option|human review)\\b",
+    "interval": r"\binterval",
+    "ensemble": r"\bensemble",
+    "dropout": r"\bdropout",
+    "softmax": r"\bsoftmax",
+    "confidence": r"\bconfiden",
+    "threshold": r"\bthreshold",
+    "abstain_or_defer": r"\b(abstain|defer|reject option|human review)\b",
     "head_kick": r"head[ _-]?kick",
-    "turning": r"\\bturning\\b|spin(n?ing)?",
-    "pose": r"\\bpose\\b|keypoint|skeleton",
+    "turning": r"\bturning\\b|spin(n?ing)?",
+    "pose": r"\bpose\\b|keypoint|skeleton",
     "openpose": r"openpose",
     "mediapipe": r"mediapipe",
-    "yolo": r"\\byolo",
-    "pytorch": r"\\b(torch|pytorch)\\b",
-    "tensorflow": r"\\b(tensorflow|keras)\\b",
-    "onnx": r"\\bonnx",
-    "opencv": r"\\b(cv2|opencv)\\b",
-    "fps_or_frame": r"\\bfps\\b|frame[_ -]?rate|frame[_ -]?index",
-    "latency_or_timing": r"\\blatency\\b|perf_counter|time\\.time|elapsed",
-    "event_logic": r"\\bevent\\b|temporal|window|cooldown|debounce",
-    "logging_or_export": r"\\b(csv|json|logger|logging|export|audit)\\b",
+    "yolo": r"\byolo",
+    "pytorch": r"\b(torch|pytorch)\b",
+    "tensorflow": r"\b(tensorflow|keras)\b",
+    "onnx": r"\bonnx",
+    "opencv": r"\b(cv2|opencv)\b",
+    "fps_or_frame": r"\bfps\\b|frame[_ -]?rate|frame[_ -]?index",
+    "latency_or_timing": r"\blatency\\b|perf_counter|time\.time|elapsed",
+    "event_logic": r"\bevent\\b|temporal|window|cooldown|debounce",
+    "logging_or_export": r"\b(csv|json|logger|logging|export|audit)\b",
 }
 COMPILED = {k: re.compile(v, re.I) for k, v in SIGNALS.items()}
 
@@ -168,11 +168,11 @@ def main() -> None:
         ),
     }
     (args.out / "package_manifest.json").write_text(
-        json.dumps(manifest, indent=2) + "\\n", encoding="utf-8"
+        json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
     )
 
     print(json.dumps(manifest, indent=2))
-    print(f"\\nWrote audit reports to {args.out}")
+    print(f"\nWrote audit reports to {args.out}")
     if sensitive_name_candidates:
         print("WARNING: sensitive-looking filenames were detected; inspect locally and do not publish secrets.")
 
