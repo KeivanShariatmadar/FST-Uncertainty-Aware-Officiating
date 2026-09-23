@@ -5,6 +5,12 @@ The current MIT Sloan Sports Analytics Conference research-paper page states tha
 
 Official rules: https://www.sloansportsconference.com/research-paper-competition
 
+## Current recommended title
+
+**When Should AI Defer? Uncertainty-Aware Video Review for Human-in-the-Loop Officiating in Competitive Taekwondo**
+
+The title avoids implying that faster or more reliable end-to-end FST performance has already been independently re-established in the present SSAC evidence package.
+
 ## Abstract requirements
 The submitted abstract should:
 - contain fewer than 500 words, including title and body;
@@ -39,6 +45,7 @@ The submitted abstract should:
 - final SSAC27 abstract candidate with **393 words including title and section headings**;
 - claim-to-evidence map for the abstract;
 - open-source compliance review;
+- automated GitHub Actions reproducibility workflow; the expanded evaluation smoke-test suite has passed on the public repository;
 - fully rewritten current-evidence manuscript with literature positioning, audited methods/results, limitations and reproducibility section.
 
 ### Current verified abstract-stage results
