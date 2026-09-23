@@ -18,7 +18,7 @@
 
 Use:
 
-**'paper/SSAC27_ABSTRACT_FINAL_CANDIDATE.md'**
+**'paper/SSAC27_ABSTRACT_FINAL.md'**
 
 For direct entry into the online form use:
 
@@ -48,7 +48,7 @@ The public repository contains the de-identified candidate-level data used for t
 
 ## Current full-paper source
 
-**'paper/SSAC27_FULL_PAPER_CURRENT_EVIDENCE.md'**
+**'paper/SSAC27_FULL_PAPER_MASTER.md'**
 
 This is the rewritten current-evidence manuscript. It deliberately separates verified current-study findings from prior-public FST/FST 2.0 claims whose raw observations have not yet been reconstructed.
 
