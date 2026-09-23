@@ -82,6 +82,7 @@ Every quantitative claim is classified in `evaluation/evidence_ledger.csv`.
 
 ## Repository map
 
+- `PROJECT_STATE.md` — authoritative title, files, evidence status, claim boundaries and remaining benchmark work
 - `DATA_STATEMENT.md` — data provenance, release status and rights constraints
 - `REPRODUCIBILITY.md` — what can currently be reproduced
 - `IP_AND_LICENSING.md` — research/publication versus private FST implementation boundary
