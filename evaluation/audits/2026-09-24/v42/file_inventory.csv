@@ -1,0 +1,17 @@
+path,size_bytes,compressed_bytes,sha256,suffix
+requirements.txt,151,121,0ad2b46a9c60ece124ba72d58e8ac81a59d59ea5113bec58a5cbd2e60429214c,.txt
+run.py,110,96,062ca5da3fc6c8e09a8e5a3385e9cf0669adc8d15a891522ac0a99d738737d71,.py
+README.md,703,462,4784451101fc1a70e034eab86c28e95823ae4c8cd55d0d680e26dafba6d1fa18,.md
+app/__init__.py,0,2,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,.py
+app/main.py,9661,2679,1e25063af7e5d4fa9493c5db86348b12da03cde31cefbb97fe92d46ba5b7d2ed,.py
+datasets/role_detector/role_detector.yaml,170,118,fc09556a87ebec0b88ef63448ad7f75ad09bc554e60d40720266f0a3df6ab6ce,.yaml
+app/core/__init__.py,0,2,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,.py
+app/core/authdb.py,2306,911,14b020751de7e1b70e2c8629d372e4e65add7d3df25cc4a3d3b19a7942de1a77,.py
+app/core/training.py,3473,1446,9ddff0f292d56ad7eee4498caf6f58c4291a8bc2e013d605785913f2cbff59fe,.py
+app/core/engine.py,11346,4169,cf82b718b3402da4ab6a866a3e887d34daa54f12752026fbf4cf22a964c84ebe,.py
+app/templates/base.html,2832,1258,ea8e5bfc47064c96567da1eb1644209cd1757d0baaf12647ac54a1da0d713e54,.html
+app/templates/login.html,1227,658,06611e101847f7dcec140d0e8da1d1f5be82df56caf034da1c84b7fe1fdc3869,.html
+app/templates/index.html,4564,1311,73d922071a309c362ba5021fabc1e49ded9e581fb820594b09d68f059c267f10,.html
+app/templates/job.html,2894,926,8e582e8d03dd7f6d5a11431ad4e86b187491daa90cb2d2570b8c8cc24f492dc9,.html
+app/templates/admin.html,1055,474,7a3a3381454b2baf9544946add1b490cb85bfdaedd707b67b84387f690fb4100,.html
+app/templates/training.html,3118,1334,9e512ac891937415aa9b021271201cff2ee11dc80e683ef50613f22170806492,.html

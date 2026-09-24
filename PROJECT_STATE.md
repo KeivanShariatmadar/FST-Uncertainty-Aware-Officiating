@@ -1,6 +1,6 @@
 # SSAC27 FST Research Package — Master State
 
-**Last updated:** 2026-09-23
+**Last updated:** 2026-09-24
 
 This file is the project-level source of truth for the SSAC27 FST.ai / FST.ai 2.0 submission. It is intended to prevent title, claim, dataset, and manuscript drift across later revisions.
 
@@ -112,7 +112,11 @@ Supplied private file:
 - workspace file ID: 'file_00000000c9608210b39bcb6091e41efe'
 - observed size: 17,841 bytes.
 
-The current managed execution environment has not reliably exposed the ZIP contents for byte-level inspection. Therefore no source-level implementation behavior is treated as verified yet.
+The ZIP was successfully read and statically inspected on 2026-09-24. Its CRC integrity check passed. The supplied implementation tracks people and assigns roles, supports manual scoring and annotation, and trains a role detector. It does not supply the automatic head-kick event classifier, bundled frozen weights, or event-level numerical uncertainty needed for the SSAC benchmark. This finding is limited to the inspected ZIP, not all FST implementations.
+
+The championship clip archive was also located and inventoried: 541 videos (450 in training folders, 91 in test folders), with unresolved annotation/folder identifier discrepancies. A complete independent event census, source-time mapping, and frozen event predictions remain unavailable. No empirical event-matching, recall/F1, or risk–coverage result has been generated.
+
+Verified findings, hashes, dataset inventory, fresh reproduction results, and the exact evidence needed to continue are in [the 2026-09-24 evidence audit](evaluation/audits/2026-09-24/README.md). Existing candidate data and manuscript claims are unchanged.
 
 Private/local audit tools:
 - 'evaluation/inspect_fst_package.py'

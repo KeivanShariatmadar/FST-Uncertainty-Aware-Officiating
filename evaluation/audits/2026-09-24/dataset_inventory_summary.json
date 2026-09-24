@@ -1,0 +1,53 @@
+{
+  "audit_date": "2026-09-24",
+  "archive_name": "Alaa-Work-Video-Clips.zip",
+  "archive_size_bytes": 3945954316,
+  "archive_sha256": "3871351bf592cf48c26c640d37aeb65903cdee5759018306e8416d9989f0ede3",
+  "inventory_method": "ZIP central-directory inventory; excludes __MACOSX and directory entries; video contents not exhaustively decoded or independently annotated",
+  "non_resource_fork_file_count": 597,
+  "extension_counts": {
+    ".pdf": 1,
+    ".ods": 1,
+    ".mov": 519,
+    ".mp4": 22,
+    ".png": 54
+  },
+  "video_count": 541,
+  "video_counts_by_directory_split": {
+    "test": 91,
+    "train": 450
+  },
+  "match_folder_counts_by_directory_split": {
+    "train": 54,
+    "val": 0,
+    "test": 17
+  },
+  "train_test_literal_folder_overlap": 0,
+  "annotation_csv_sha256": "8f04cd17d2207ec56ee77f1948a8462458dd42782f2ab52f66284cd46c33e8af",
+  "annotation_csv_columns": [
+    "match_id",
+    "teams",
+    "clip_name",
+    "player",
+    "label",
+    "confidence",
+    "difficulty",
+    "event_label",
+    "contact",
+    "visibility",
+    "notes"
+  ],
+  "annotation_csv_candidate_rows": 546,
+  "annotation_csv_label_counts": {
+    "True Positive": 450,
+    "False Positive": 96
+  },
+  "annotation_csv_unique_match_ids": 74,
+  "annotated_match_ids_without_literal_video_folder_count": 5,
+  "video_folders_without_literal_annotation_match_id_count": 2,
+  "annotation_ods_sha256": "a4e6be021f1f0be7029a80c2b089137d60ead22872b5900474a8e221edae704a",
+  "independent_event_census_verified": false,
+  "source_video_timebase_and_clip_offsets_verified": false,
+  "frozen_event_predictions_available": false,
+  "warning": "Directory split labels do not establish training history, bout independence, athlete independence, or a valid held-out benchmark. Literal identifier mismatches require reconciliation, not assumed missing/extra events."
+}

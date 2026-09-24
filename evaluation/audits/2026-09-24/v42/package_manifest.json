@@ -1,0 +1,50 @@
+{
+  "source_zip_name": "FSTai_Competition_Platform_v4_2(1).zip",
+  "source_zip_size_bytes": 17841,
+  "source_zip_sha256": "ee7466b18ff02ce3b73c40357a0cb46ce264535667de26c49f16c0edea65da97",
+  "zip_integrity_bad_member": null,
+  "file_count": 16,
+  "suffix_counts": {
+    ".html": 6,
+    ".md": 1,
+    ".py": 7,
+    ".txt": 1,
+    ".yaml": 1
+  },
+  "dependency_files": [
+    "requirements.txt"
+  ],
+  "model_or_weight_candidates": [],
+  "possible_entrypoints": [
+    "app/main.py",
+    "run.py"
+  ],
+  "sensitive_filename_candidates": [],
+  "signal_vocabulary": [
+    "abstain_or_defer",
+    "confidence",
+    "credal",
+    "dropout",
+    "ensemble",
+    "event_logic",
+    "fps_or_frame",
+    "head_kick",
+    "interval",
+    "latency_or_timing",
+    "logging_or_export",
+    "mediapipe",
+    "onnx",
+    "opencv",
+    "openpose",
+    "pose",
+    "pytorch",
+    "random_set",
+    "softmax",
+    "tensorflow",
+    "threshold",
+    "turning",
+    "uncertainty",
+    "yolo"
+  ],
+  "privacy_note": "Reports contain metadata, hashes, filenames and signal counts only. No source-code snippets or secret values are written."
+}
