@@ -180,3 +180,7 @@ Any future license must be chosen deliberately because the authors intend to per
 No numerical claim enters the SSAC27 Results section unless its population, denominator, evaluation unit, provenance, calculation, and release status are identifiable in the evidence package.
 
 When stronger evidence becomes available, update this master state first, then the evidence ledger, abstract claim map, abstract, manuscript, README, and submission checklist in that order.
+
+## Contest 702 continuity follow-up — 24 September 2026
+
+[Continuity and source audit](evaluation/audits/2026-09-24/MATCH702_CONTINUITY.md) records sequential decoding, conditional inter-recording gaps and unresolved blinding. An official Court 7 Day 2 video was located as a candidate alternate source; complete contest coverage and synchronization are not yet verified. No benchmark ground truth, frozen predictions or detector-performance metrics were released. Existing public evidence is unchanged.
