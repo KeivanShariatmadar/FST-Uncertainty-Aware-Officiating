@@ -122,6 +122,8 @@ Additional G1 source files subsequently supplied by the author contain automatic
 
 Initial offline replay development is now complete: 28 Austria recordings were fingerprinted; nine software tests passed; two short video windows were replayed, with an exact repeat of the separate single-camera run. Frequent athlete-role failures and the lack of independent event labels prevent promotion to a benchmark. No accuracy or deferral metrics were generated. See [the replay development report](evaluation/audits/2026-09-24/REPLAY_DEVELOPMENT.md).
 
+A first-pass Austria annotation preparation packet now contains a provisional recording map and 84 inspected sample frames across 28 files. Two provisional recording groups are queued for identity reconciliation; no canonical bout assignments, independent labels or released annotation windows have been established. See [annotation preparation status](evaluation/audits/2026-09-24/ANNOTATION_PREPARATION.md).
+
 Private/local audit tools:
 - 'evaluation/inspect_fst_package.py'
 - 'evaluation/LOCAL_IMPLEMENTATION_AUDIT.md'
