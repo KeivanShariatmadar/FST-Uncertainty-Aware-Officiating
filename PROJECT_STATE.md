@@ -120,6 +120,8 @@ Verified findings, hashes, dataset inventory, fresh reproduction results, and th
 
 Additional G1 source files subsequently supplied by the author contain automatic heuristic head-kick candidate logic, alongside simulated and incomplete variants. The author identifies the historical script/settings as unknown. [The G1 follow-up](evaluation/audits/2026-09-24/G1_FOLLOWUP.md) records source verification, historical log and Austria recording inventories, runtime checks, score semantics, and the steps needed for a new frozen benchmark. These findings extend the available implementation evidence without changing the earlier ZIP-specific audit or establishing new performance metrics.
 
+Initial offline replay development is now complete: 28 Austria recordings were fingerprinted; nine software tests passed; two short video windows were replayed, with an exact repeat of the separate single-camera run. Frequent athlete-role failures and the lack of independent event labels prevent promotion to a benchmark. No accuracy or deferral metrics were generated. See [the replay development report](evaluation/audits/2026-09-24/REPLAY_DEVELOPMENT.md).
+
 Private/local audit tools:
 - 'evaluation/inspect_fst_package.py'
 - 'evaluation/LOCAL_IMPLEMENTATION_AUDIT.md'
