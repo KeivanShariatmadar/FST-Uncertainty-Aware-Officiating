@@ -118,6 +118,8 @@ The championship clip archive was also located and inventoried: 541 videos (450 
 
 Verified findings, hashes, dataset inventory, fresh reproduction results, and the exact evidence needed to continue are in [the 2026-09-24 evidence audit](evaluation/audits/2026-09-24/README.md). Existing candidate data and manuscript claims are unchanged.
 
+Additional G1 source files subsequently supplied by the author contain automatic heuristic head-kick candidate logic, alongside simulated and incomplete variants. The author identifies the historical script/settings as unknown. [The G1 follow-up](evaluation/audits/2026-09-24/G1_FOLLOWUP.md) records source verification, historical log and Austria recording inventories, runtime checks, score semantics, and the steps needed for a new frozen benchmark. These findings extend the available implementation evidence without changing the earlier ZIP-specific audit or establishing new performance metrics.
+
 Private/local audit tools:
 - 'evaluation/inspect_fst_package.py'
 - 'evaluation/LOCAL_IMPLEMENTATION_AUDIT.md'
